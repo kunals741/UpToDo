@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="LatoRegularText">
+        <item name="android:fontFamily">@font/lato_regular</item>
+    </style>
+
+    <style name="LatoRegular8sp" parent="@style/LatoRegularText">
+        <item name="android:textSize">8sp</item>
+    </style>
+
+    <style name="LatoRegular10sp" parent="@style/LatoRegularText">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="LatoRegular12sp" parent="@style/LatoRegularText">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="LatoRegular14sp" parent="@style/LatoRegularText">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="LatoRegular16sp" parent="@style/LatoRegularText">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="LatoRegular18sp" parent="@style/LatoRegularText">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="LatoRegular20sp" parent="@style/LatoRegularText">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="LatoRegular22sp" parent="@style/LatoRegularText">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="LatoRegular24sp" parent="@style/LatoRegularText">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="LatoBoldText">
+        <item name="android:fontFamily">@font/lato_bold</item>
+    </style>
+
+    <style name="LatoBold8sp" parent="@style/LatoBoldText">
+        <item name="android:textSize">8sp</item>
+    </style>
+
+    <style name="LatoBold10sp" parent="@style/LatoBoldText">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="LatoBold12sp" parent="@style/LatoBoldText">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="LatoBold14sp" parent="@style/LatoBoldText">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="LatoBold16sp" parent="@style/LatoBoldText">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="LatoBold18sp" parent="@style/LatoBoldText">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="LatoBold20sp" parent="@style/LatoBoldText">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="LatoBold22sp" parent="@style/LatoBoldText">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="LatoBold24sp" parent="@style/LatoBoldText">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="LatoBold32sp" parent="@style/LatoBoldText">
+        <item name="android:textSize">32sp</item>
+    </style>
+
+</resources>

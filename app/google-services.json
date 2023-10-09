@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "506079378598",
+    "project_id": "uptodo-54c85",
+    "storage_bucket": "uptodo-54c85.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:506079378598:android:2f920a936e172e0182c867",
+        "android_client_info": {
+          "package_name": "com.kunal.uptodo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuUy5QETDzIRxu1pCtktjf6oqtdQE0hDM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

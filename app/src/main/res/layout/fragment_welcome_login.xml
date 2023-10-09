@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_color"
+    android:paddingTop="@dimen/dim_14dp"
+    android:paddingBottom="@dimen/dim_54dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivBack"
+        android:layout_width="@dimen/dim_48dp"
+        android:layout_height="@dimen/dim_48dp"
+        android:layout_marginStart="@dimen/dim_12dp"
+        android:padding="@dimen/dim_12dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTitle"
+        style="@style/LatoBold32sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dim_46dp"
+        android:gravity="center"
+        android:text="@string/welcome_to_uptodo"
+        android:textColor="@color/white_87"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivBack" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvSubtitle"
+        style="@style/LatoRegular16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dim_26dp"
+        android:maxWidth="287dp"
+        android:text="@string/please_login_to_your_account_or_create_new_account_to_continue"
+        android:textAlignment="center"
+        android:textColor="@color/white_67"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dim_24dp"
+        android:layout_marginBottom="@dimen/dim_28dp"
+        android:fontFamily="@font/lato_regular"
+        android:paddingVertical="@dimen/dim_12dp"
+        android:text="@string/login"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dim_16sp"
+        app:backgroundTint="@color/btn_stroke_outline"
+        app:cornerRadius="@dimen/dim_4dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnRegister" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnRegister"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dim_24dp"
+        android:fontFamily="@font/lato_regular"
+        android:paddingVertical="@dimen/dim_12dp"
+        android:text="@string/create_account"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dim_16sp"
+        app:cornerRadius="@dimen/dim_4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:strokeColor="@color/btn_stroke_outline" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
