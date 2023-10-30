@@ -9,7 +9,6 @@
         <item name="colorPrimaryDark">@color/primary_color</item>
         <item name="colorSecondary">@color/secondary_color</item>
         <item name="android:statusBarColor">@color/primary_color</item>
-
     </style>
 
     <!-- Splash Screen Theme (API >= 31) -->

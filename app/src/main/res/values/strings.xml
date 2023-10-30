@@ -23,5 +23,10 @@
     <string name="re_enter_you_password">Re-enter you Password</string>
     <string name="or">or</string>
     <string name="register_with_google">Register with Google</string>
+    <string name="register_with_facebook">Register with Facebook</string>
     <string name="already_have_an_account">Already have an account?</string>
+    <string name="register">Register</string>
+    <string name="don_t_have_an_account">Don’t have an account?</string>
+    <string name="login_with_google">Login with Google</string>
+    <string name="login_with_facebook">Login with Facebook</string>
 </resources>

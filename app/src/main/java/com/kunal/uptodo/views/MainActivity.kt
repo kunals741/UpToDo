@@ -3,6 +3,7 @@ package com.kunal.uptodo.views
 import android.os.Bundle
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.kunal.uptodo.R
+import com.kunal.uptodo.constants.PageName
 import com.kunal.uptodo.databinding.ActivityMainBinding
 
 
@@ -30,4 +31,6 @@ class MainActivity : BaseActivity() {
             onBackPressedDispatcher.onBackPressed()
         }
     }
+
+    override fun pageType() = PageName.MainActivity
 }

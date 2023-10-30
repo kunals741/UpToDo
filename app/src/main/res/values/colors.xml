@@ -13,4 +13,5 @@
     <color name="edit_text_background">#1D1D1D</color>
     <color name="edit_text_hint_color">#535353</color>
     <color name="edit_text_stroke_color">#979797</color>
+    <color name="btn_disabled_text_color">#80FFFFFF</color>
 </resources>

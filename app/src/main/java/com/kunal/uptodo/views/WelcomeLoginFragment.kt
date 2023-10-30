@@ -4,10 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.kunal.uptodo.constants.PageName
 import com.kunal.uptodo.databinding.FragmentWelcomeLoginBinding
 
 class WelcomeLoginFragment : BaseFragment() {
     private lateinit var binding: FragmentWelcomeLoginBinding
+    override fun getPageName() = PageName.WelcomeLoginFragment
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,10 +30,10 @@ class WelcomeLoginFragment : BaseFragment() {
             activityHandleBack()
         }
         btnLogin.setOnClickListener {
-            //todo
+            LoginRegisterActivity.startActivity(getPageName(), false, requireActivity())
         }
         btnRegister.setOnClickListener {
-            //todo
+            LoginRegisterActivity.startActivity(getPageName(), true, requireActivity())
         }
     }
 

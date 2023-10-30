@@ -8,12 +8,14 @@ import androidx.core.view.isVisible
 import androidx.viewpager2.widget.ViewPager2
 import com.kunal.uptodo.R
 import com.kunal.uptodo.adapters.OnboardingViewPagerAdapter
+import com.kunal.uptodo.constants.PageName
 import com.kunal.uptodo.databinding.FragmentOnboardingBinding
 import com.kunal.uptodo.models.OnboardingItem
 
 class OnboardingFragment : BaseFragment() {
 
     private lateinit var binding: FragmentOnboardingBinding
+    override fun getPageName() = PageName.OnboardingFragment
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

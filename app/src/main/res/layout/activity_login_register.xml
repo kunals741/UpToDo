@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primary_color"
@@ -50,6 +49,7 @@
         android:hint="@string/enter_your_username"
         android:maxLines="1"
         android:padding="@dimen/dim_12dp"
+        android:textColor="@color/white_87"
         android:textColorHint="@color/edit_text_hint_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/tvLabelUserName"
@@ -76,6 +76,7 @@
         android:hint="@string/enter_your_password"
         android:inputType="textPassword"
         android:padding="@dimen/dim_12dp"
+        android:textColor="@color/white_87"
         android:textColorHint="@color/edit_text_hint_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/tvLabelUserName"
@@ -102,6 +103,7 @@
         android:hint="@string/re_enter_you_password"
         android:inputType="textPassword"
         android:padding="@dimen/dim_12dp"
+        android:textColor="@color/white_87"
         android:textColorHint="@color/edit_text_hint_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/tvLabelUserName"
@@ -112,12 +114,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dim_24dp"
-        android:layout_marginTop="@dimen/dim_50dp"
+        android:layout_marginTop="@dimen/dim_40dp"
         android:backgroundTint="@color/btn_color"
         android:paddingHorizontal="@dimen/dim_24dp"
         android:paddingVertical="@dimen/dim_12dp"
         android:text="@string/login"
         android:textAllCaps="true"
+        android:textColor="@color/white"
         app:cornerRadius="@dimen/dim_4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -160,7 +163,6 @@
         app:layout_constraintStart_toEndOf="@+id/tvOr"
         app:layout_constraintTop_toBottomOf="@id/btnLogin" />
 
-
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnLoginWithGoogle"
         style="@style/Widget.Material3.Button.OutlinedButton"
@@ -176,37 +178,63 @@
         app:cornerRadius="@dimen/dim_4dp"
         app:icon="@drawable/ic_google"
         app:iconGravity="textStart"
+        app:iconPadding="@dimen/dim_10dp"
+        app:iconSize="@dimen/dim_24dp"
         app:iconTint="@null"
         app:layout_constraintTop_toBottomOf="@id/tvOr"
         app:strokeColor="@color/btn_stroke_outline" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvAlreadyHaveAccount"
-        style="@style/LatoRegular12sp"
-        android:layout_width="wrap_content"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLoginWithFacebook"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/already_have_an_account"
-        android:textColor="@color/edit_text_stroke_color"
-        app:layout_constraintEnd_toStartOf="@+id/tvLogin"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="@dimen/dim_20dp"
-        />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvLogin"
-        style="@style/LatoRegular12sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/login"
+        android:layout_marginStart="@dimen/dim_24dp"
+        android:layout_marginTop="@dimen/dim_24dp"
+        android:fontFamily="@font/lato_regular"
+        android:paddingVertical="@dimen/dim_12dp"
+        android:text="@string/register_with_facebook"
         android:textColor="@color/white_87"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        android:layout_marginStart="@dimen/dim_4dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="@dimen/dim_16sp"
+        app:cornerRadius="@dimen/dim_4dp"
+        app:icon="@drawable/ic_fb"
+        app:iconGravity="textStart"
+        app:iconPadding="@dimen/dim_10dp"
+        app:iconSize="@dimen/dim_24dp"
+        app:iconTint="@null"
+        app:layout_constraintTop_toBottomOf="@id/btnLoginWithGoogle"
+        app:strokeColor="@color/btn_stroke_outline" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cvFooter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/dim_20dp"
-        app:layout_constraintStart_toEndOf="@+id/tvAlreadyHaveAccount" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAlreadyHaveAccount"
+            style="@style/LatoRegular12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/already_have_an_account"
+            android:textColor="@color/edit_text_stroke_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLogin"
+            style="@style/LatoRegular12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dim_4dp"
+            android:text="@string/login"
+            android:textColor="@color/white_87"
+            app:layout_constraintStart_toEndOf="@+id/tvAlreadyHaveAccount"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
