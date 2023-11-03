@@ -29,4 +29,10 @@
     <string name="don_t_have_an_account">Don’t have an account?</string>
     <string name="login_with_google">Login with Google</string>
     <string name="login_with_facebook">Login with Facebook</string>
+    <string name="index">Index</string>
+    <string name="calendar">Calendar</string>
+    <string name="focus">Focus</string>
+    <string name="profile">Profile</string>
+    <string name="what_do_you_want_to_do_today">What do you want to do today?</string>
+    <string name="tap_to_add_your_tasks">Tap + to add your tasks</string>
 </resources>

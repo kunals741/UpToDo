@@ -56,6 +56,13 @@ class LoginRegisterActivity : BaseActivity() {
                 this@LoginRegisterActivity
             )
         }
+        btnLogin.setOnClickListener {
+            //todo check for condtions
+            HomeActivity.startHomeActivity(
+                pageType(),
+                this@LoginRegisterActivity
+            )
+        }
     }
 
     //todo handle empty text case:

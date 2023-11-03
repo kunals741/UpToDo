@@ -85,4 +85,10 @@
         <item name="android:textSize">32sp</item>
     </style>
 
+    <style name="BottomNavigationTextStyle">
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">@dimen/dim_12sp</item>
+        <item name="android:textColor">@color/white_87</item>
+    </style>
+
 </resources>
