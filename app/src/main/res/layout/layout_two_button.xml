@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/tvCancel"
+        android:layout_width="@dimen/dim_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_6dp"
+        android:background="@drawable/button_4dp"
+        android:fontFamily="@font/lato_regular"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:paddingHorizontal="@dimen/dim_24dp"
+        android:paddingVertical="@dimen/dim_12dp"
+        android:text="@string/cancel"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/secondary_color"
+        android:textSize="@dimen/dim_14sp"
+        app:layout_constraintBottom_toBottomOf="@id/btnChooseTime"
+        app:layout_constraintEnd_toStartOf="@id/btnChooseTime"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnChooseTime" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnChooseTime"
+        android:layout_width="@dimen/dim_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        android:background="@drawable/button_4dp_filled"
+        android:backgroundTint="@color/btn_color"
+        android:fontFamily="@font/lato_regular"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:paddingHorizontal="@dimen/dim_24dp"
+        android:paddingVertical="@dimen/dim_12dp"
+        android:text="@string/choose_time"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dim_14sp"
+        app:cornerRadius="@dimen/dim_4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvCancel"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

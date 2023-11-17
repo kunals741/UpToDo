@@ -23,10 +23,15 @@ class IndexFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView()
+        initListeners()
     }
 
     private fun initView() = binding.run {
         //todo recyler view for items later
+    }
+
+    private fun initListeners() = binding.run {
+
     }
 
 

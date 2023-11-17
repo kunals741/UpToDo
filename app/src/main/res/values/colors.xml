@@ -9,6 +9,7 @@
     <color name="white_67">#ABFFFFFF</color>
     <color name="btn_color">#8875FF</color>
     <color name="grey_afafaf">#AFAFAF</color>
+    <color name="disable">#EBEBE4</color>
     <color name="btn_stroke_outline">#8E7CFF</color>
     <color name="edit_text_background">#1D1D1D</color>
     <color name="edit_text_hint_color">#535353</color>

@@ -91,4 +91,37 @@
         <item name="android:textColor">@color/white_87</item>
     </style>
 
+    <style name="bottomSheetBackground" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/background_bs_16dp</item>
+    </style>
+
+    <style name="TransparentBackgroundDialog" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:colorBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+
+    <style name="ThemeOverlay.App.DatePicker" parent="@style/ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="colorPrimary">@color/primary_color</item>
+        <item name="colorOnPrimary">@color/secondary_color</item>
+        <item name="colorContainer">@color/secondary_color</item>
+        <item name="itemTextColor">@color/white_87</item>
+        <item name="itemFillColor">@color/secondary_color</item>
+        <item name="android:textColor">@color/white_87</item>
+    </style>
+
+    <style name="CalenderViewCustom" parent="AppTheme">
+        <item name="colorAccent">@color/secondary_color</item>
+        <item name="android:textColorPrimary">@color/white_87</item>
+    </style>
+
+    <style name="CalenderViewDateCustomText" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textColor">@color/selector_date_text_color</item>
+        <item name="android:weekNumberColor">@color/white_87</item>
+    </style>
+
+    <style name="CalenderViewWeekCustomText" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textColor">@color/white_87</item>
+    </style>
+
 </resources>

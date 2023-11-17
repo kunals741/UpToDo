@@ -3,14 +3,14 @@ package com.kunal.uptodo.views
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.kunal.uptodo.R
 import com.kunal.uptodo.constants.IntentKeyConstants
+import com.kunal.uptodo.constants.PageName
 import com.kunal.uptodo.databinding.ActivityHomeBinding
 
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : BaseActivity() {
     private lateinit var binding: ActivityHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +19,7 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.ivPlusBtn.setOnClickListener {
-            //todo add item
+            AddTaskBottomsheet.newInstance(pageType()).show(supportFragmentManager, AddTaskBottomsheet.TAG)
         }
         showFragment(IndexFragment.newInstance(), IndexFragment.INDEX)
         setBottomNavigationListener()
@@ -59,6 +59,13 @@ class HomeActivity : AppCompatActivity() {
             .commit()
         binding.tvFragmentName.text = screenName
     }
+
+    override fun handleBack() {
+        //todo handle later
+    }
+
+    override fun pageType(): String = PageName.HomeActivity
+
 
     companion object {
         @JvmStatic

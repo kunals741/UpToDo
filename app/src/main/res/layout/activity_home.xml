@@ -31,19 +31,20 @@
         android:id="@+id/ivPlusBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dim_16dp"
+        android:layout_marginBottom="@dimen/dim_22dp"
         android:src="@drawable/ic_plus"
         app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
-        android:layout_marginBottom="@dimen/dim_22dp"
-        android:layout_marginEnd="@dimen/dim_16dp"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
+        style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/grey_navigation"
+        android:foreground="?android:attr/selectableItemBackground"
         app:itemTextAppearance="@style/BottomNavigationTextStyle"
-        style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottom_navigation_menu" />
 

@@ -51,6 +51,7 @@
         android:padding="@dimen/dim_12dp"
         android:textColor="@color/white_87"
         android:textColorHint="@color/edit_text_hint_color"
+        android:textCursorDrawable="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/tvLabelUserName"
         app:layout_constraintTop_toBottomOf="@id/tvLabelUserName" />
@@ -78,6 +79,7 @@
         android:padding="@dimen/dim_12dp"
         android:textColor="@color/white_87"
         android:textColorHint="@color/edit_text_hint_color"
+        android:textCursorDrawable="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/tvLabelUserName"
         app:layout_constraintTop_toBottomOf="@id/tvLabelPassword" />
@@ -105,6 +107,7 @@
         android:padding="@dimen/dim_12dp"
         android:textColor="@color/white_87"
         android:textColorHint="@color/edit_text_hint_color"
+        android:textCursorDrawable="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/tvLabelUserName"
         app:layout_constraintTop_toBottomOf="@id/tvLabelConfirmPassword" />
