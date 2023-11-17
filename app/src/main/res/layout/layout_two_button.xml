@@ -5,7 +5,7 @@
     android:layout_height="wrap_content">
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/tvCancel"
+        android:id="@+id/btnNegative"
         android:layout_width="@dimen/dim_0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dim_8dp"
@@ -20,13 +20,13 @@
         android:textAllCaps="false"
         android:textColor="@color/secondary_color"
         android:textSize="@dimen/dim_14sp"
-        app:layout_constraintBottom_toBottomOf="@id/btnChooseTime"
-        app:layout_constraintEnd_toStartOf="@id/btnChooseTime"
+        app:layout_constraintBottom_toBottomOf="@id/btnPositive"
+        app:layout_constraintEnd_toStartOf="@id/btnPositive"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/btnChooseTime" />
+        app:layout_constraintTop_toTopOf="@id/btnPositive" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnChooseTime"
+        android:id="@+id/btnPositive"
         android:layout_width="@dimen/dim_0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/dim_8dp"
@@ -43,6 +43,6 @@
         android:textSize="@dimen/dim_14sp"
         app:cornerRadius="@dimen/dim_4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tvCancel"
+        app:layout_constraintStart_toEndOf="@id/btnNegative"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -124,4 +124,15 @@
         <item name="android:textColor">@color/white_87</item>
     </style>
 
+    <style name="timePickerStyle" parent="AppTheme">
+        <item name="android:textColorPrimary">@color/white_87</item> <!-- color for digits -->
+        <item name="android:textColor">@color/white_87</item> <!-- color for colon -->
+        <item name="android:colorControlNormal">@color/edit_text_stroke_color</item> <!-- color for (horizontal) delimeters -->
+    </style>
+
+    <style name="RoundedCornersDialog" parent="@style/Theme.MaterialComponents.Dialog">
+        <item name="dialogCornerRadius">@dimen/dim_4dp</item>
+        <item name="background">@color/primary_color</item>
+    </style>
+
 </resources>
