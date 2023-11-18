@@ -42,6 +42,9 @@ class AddTaskBottomsheet : BaseBottomsheet() {
         ivDeadline.setOnClickListener {
             showCalendarPopUp()
         }
+        ivPriority.setOnClickListener {
+            showChoosePriorityPopUp()
+        }
     }
 
     private fun showCalendarPopUp() {
@@ -83,6 +86,15 @@ class AddTaskBottomsheet : BaseBottomsheet() {
             }
             //todo save this deadline
             //todo also handle the case when he clicks cancel button
+        }
+    }
+
+    private fun showChoosePriorityPopUp() {
+        ChoosePriorityDialog.showChoosePriorityDialog(
+            PageName.AddTaskBottomsheet,
+            childFragmentManager
+        ){
+            //todo
         }
     }
 
