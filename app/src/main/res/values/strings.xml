@@ -43,4 +43,6 @@
     <string name="_1">1</string>
     <string name="task_priority">Task Priority</string>
     <string name="save">Save</string>
+    <string name="choose_category">Choose Category</string>
+    <string name="add_category">Add Category</string>
 </resources>

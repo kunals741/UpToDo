@@ -45,6 +45,9 @@ class AddTaskBottomsheet : BaseBottomsheet() {
         ivPriority.setOnClickListener {
             showChoosePriorityPopUp()
         }
+        ivCategory.setOnClickListener {
+            showChooseCategoryPopUp()
+        }
     }
 
     private fun showCalendarPopUp() {
@@ -91,6 +94,15 @@ class AddTaskBottomsheet : BaseBottomsheet() {
 
     private fun showChoosePriorityPopUp() {
         ChoosePriorityDialog.showChoosePriorityDialog(
+            PageName.AddTaskBottomsheet,
+            childFragmentManager
+        ){
+            //todo
+        }
+    }
+
+    private fun showChooseCategoryPopUp(){
+        ChooseCategoryDialog.showChooseCategoryDialog(
             PageName.AddTaskBottomsheet,
             childFragmentManager
         ){

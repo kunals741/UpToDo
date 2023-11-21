@@ -52,7 +52,17 @@ class OnboardingFragment : BaseFragment() {
             }
         }
         tvSkip.setOnClickListener {
-            showWelcomeLoginFragment()
+            //showWelcomeLoginFragment()
+            showChooseCategoryPopUp()
+        }
+    }
+
+    private fun showChooseCategoryPopUp(){
+        ChooseCategoryDialog.showChooseCategoryDialog(
+            PageName.AddTaskBottomsheet,
+            childFragmentManager
+        ){
+            //todo
         }
     }
 

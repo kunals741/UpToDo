@@ -2,7 +2,6 @@ package com.kunal.uptodo.adapters
 
 import android.content.res.ColorStateList
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.kunal.uptodo.R
@@ -48,10 +47,5 @@ class PriorityAdapter(
     }
 
     private fun generatePriorityOrder(k: Int) = (1..k).toList()
-
-    private fun setColorForItem(itemView: View) {
-        binding.root.backgroundTintList = ColorStateList.valueOf(itemView.resources.getColor(R.color.secondary_color))
-    }
-
 
 }
