@@ -11,6 +11,7 @@ import com.kunal.uptodo.adapters.CategoryAdapter
 import com.kunal.uptodo.adapters.GridSpacingItemDecoration
 import com.kunal.uptodo.constants.CategoryType
 import com.kunal.uptodo.constants.IntentKeyConstants
+import com.kunal.uptodo.constants.PageName
 import com.kunal.uptodo.data.CategoryList
 import com.kunal.uptodo.databinding.LayoutChooseCategoryBinding
 
@@ -25,8 +26,12 @@ class ChooseCategoryDialog : DialogFragment() {
             .setView(binding.root)
         val horizontalSpacingInPixels = resources.getDimensionPixelSize(R.dimen.dim_50dp)
         val verticalSpacingInPixels = resources.getDimensionPixelSize(R.dimen.dim_16dp)
-        binding.rvCategories.adapter = CategoryAdapter(CategoryList().getCategoryList()){
-
+        binding.rvCategories.adapter = CategoryAdapter(CategoryList().getCategoryList()) {
+            when (it) {
+                CategoryType.CREATE_NEW -> {
+                    CreateNewCategoryActivity.launchCreateNewCategory(PageName.ChooseCategoryDialog, requireActivity())
+                }
+            }
         }
         binding.rvCategories.addItemDecoration(GridSpacingItemDecoration(horizontalSpacingInPixels, verticalSpacingInPixels, 3))
 

@@ -19,7 +19,9 @@ class HomeActivity : BaseActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.ivPlusBtn.setOnClickListener {
-            AddTaskBottomsheet.newInstance(pageType()).show(supportFragmentManager, AddTaskBottomsheet.TAG)
+            AddTaskBottomsheet.newInstance(pageType(), supportFragmentManager) {
+                // todo new task data here
+            }
         }
         showFragment(IndexFragment.newInstance(), IndexFragment.INDEX)
         setBottomNavigationListener()

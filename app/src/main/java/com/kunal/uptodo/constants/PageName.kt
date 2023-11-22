@@ -11,4 +11,6 @@ object PageName {
     const val FocusFragment = "FocusFragment"
     const val ProfileFragment = "ProfileFragment"
     const val AddTaskBottomsheet = "AddTaskBottomsheet"
+    const val ChooseCategoryDialog = "ChooseCategoryDialog"
+    const val CreateNewCategoryActivity = "CreateNewCategoryActivity"
 }

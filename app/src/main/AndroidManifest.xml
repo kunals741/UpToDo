@@ -29,6 +29,10 @@
         <activity
             android:name=".views.LoginRegisterActivity"
             android:exported="true" />
+
+        <activity
+            android:name=".views.CreateNewCategoryActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
