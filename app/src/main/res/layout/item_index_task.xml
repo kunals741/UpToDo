@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_4dp_corner_no_stroke"
+    android:backgroundTint="@color/grey_navigation"
+    android:paddingHorizontal="@dimen/dim_10dp"
+    android:layout_marginVertical="@dimen/dim_16dp"
+    android:paddingVertical="@dimen/dim_12dp">
+
+    <androidx.appcompat.widget.AppCompatRadioButton
+        android:id="@+id/radioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:buttonTint="@color/white_87"
+        android:minWidth="@dimen/dim_0dp"
+        android:minHeight="@dimen/dim_0dp"
+        android:padding="@dimen/dim_0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTaskName"
+        style="@style/LatoRegular16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dim_10dp"
+        android:textColor="@color/white_87"
+        app:layout_constraintStart_toEndOf="@id/radioButton"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Do Math Homework" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDeadline"
+        style="@style/LatoRegular14sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dim_6dp"
+        android:textColor="@color/grey_afafaf"
+        app:layout_constraintStart_toStartOf="@id/tvTaskName"
+        app:layout_constraintTop_toBottomOf="@id/tvTaskName"
+        tools:text="Today At 16:45" />
+
+
+<!--    todo priority and catergory view-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

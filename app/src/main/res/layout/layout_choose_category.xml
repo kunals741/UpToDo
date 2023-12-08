@@ -44,7 +44,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/dim_20dp"
-        android:background="@drawable/button_4dp_filled"
+        android:background="@drawable/bg_4dp_corner_no_stroke"
         android:backgroundTint="@color/btn_color"
         android:fontFamily="@font/lato_regular"
         android:foreground="?android:attr/selectableItemBackground"

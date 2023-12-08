@@ -6,7 +6,7 @@
     android:layout_height="@dimen/dim_64dp"
     android:layout_marginStart="@dimen/dim_16dp"
     android:layout_marginTop="@dimen/dim_16dp"
-    android:background="@drawable/button_4dp_filled"
+    android:background="@drawable/bg_4dp_corner_no_stroke"
     android:backgroundTint="@color/grey_navigation">
 
     <androidx.appcompat.widget.AppCompatImageView

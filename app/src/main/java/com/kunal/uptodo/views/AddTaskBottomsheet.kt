@@ -6,17 +6,25 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
-import android.widget.Toast
+import androidx.fragment.app.FragmentManager
 import com.kunal.uptodo.R
+import com.kunal.uptodo.constants.CategoryType
 import com.kunal.uptodo.constants.IntentKeyConstants
 import com.kunal.uptodo.constants.PageName
 import com.kunal.uptodo.databinding.BottomsheetAddTaskBinding
+import com.kunal.uptodo.models.NewTaskModel
 import java.util.Date
 
 class AddTaskBottomsheet : BaseBottomsheet() {
     override fun pageType() = PageName.AddTaskBottomsheet
 
     private lateinit var binding: BottomsheetAddTaskBinding
+
+    private var onNewTaskClick: ((NewTaskModel) -> Unit)? = null
+    private var deadline: Long? = null
+    private var selectedTime: NewTaskModel.SelectedTime? = null
+    private var category: CategoryType? = null
+    private var priorityNumber: Int? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,11 +56,24 @@ class AddTaskBottomsheet : BaseBottomsheet() {
         ivCategory.setOnClickListener {
             showChooseCategoryPopUp()
         }
+        ivAddTask.setOnClickListener {
+            onNewTaskClick?.invoke(
+                NewTaskModel(
+                    etTask.text?.toString(),
+                    etDescription.text?.toString(),
+                    deadline,
+                    selectedTime,
+                    category,
+                    priorityNumber
+                )
+            )
+            dismiss()
+        }
     }
 
     private fun showCalendarPopUp() {
         CalendarDialog.showCalendarDialog(
-            source = PageName.AddTaskBottomsheet,
+            PageName.AddTaskBottomsheet,
             childFragmentManager
         ) { dateMillis ->
             // Create Date object from milliseconds.
@@ -65,30 +86,24 @@ class AddTaskBottomsheet : BaseBottomsheet() {
             val selectedMonthNumber = DateFormat.format("MM", date) as String // 07
             val selectedYear = DateFormat.format("yyyy", date) as String // 2021
 
-            val strFormattedSelectedDate = StringBuilder()
-                .append(selectedDay)
-                .append(" ")
-                .append(selectedMonthNumber.toInt())
-                .append(" ")
-                .append(selectedYear)
-                .append(" ")
-                .append(selectedDayOfWeek)
-            Toast.makeText(requireContext(), strFormattedSelectedDate, Toast.LENGTH_SHORT).show()
+            deadline = dateMillis
 
-            ChooseTimeDialog.showChooseTimeDialog(
-                PageName.AddTaskBottomsheet,
-                childFragmentManager
-            ) { hour, minute, timeText ->
-                val time = StringBuilder()
-                    .append(hour)
-                    .append(" : ")
-                    .append(minute)
-                    .append(" ")
-                    .append(timeText)
-                Toast.makeText(requireContext(), time, Toast.LENGTH_SHORT).show()
-            }
-            //todo save this deadline
-            //todo also handle the case when he clicks cancel button
+            showChooseTimeDialog()
+        }
+    }
+
+    private fun showChooseTimeDialog() {
+        ChooseTimeDialog.showChooseTimeDialog(
+            PageName.AddTaskBottomsheet,
+            childFragmentManager
+        ) { hour, minute, timeText ->
+            selectedTime = NewTaskModel.SelectedTime(
+                hour,
+                minute,
+                timeText
+            )
+
+            //todo cancel button
         }
     }
 
@@ -96,30 +111,33 @@ class AddTaskBottomsheet : BaseBottomsheet() {
         ChoosePriorityDialog.showChoosePriorityDialog(
             PageName.AddTaskBottomsheet,
             childFragmentManager
-        ){
-            //todo
+        ) {
+            priorityNumber = it
         }
     }
 
-    private fun showChooseCategoryPopUp(){
+    private fun showChooseCategoryPopUp() {
         ChooseCategoryDialog.showChooseCategoryDialog(
             PageName.AddTaskBottomsheet,
             childFragmentManager
-        ){
-            //todo
+        ) {
+            category = it
         }
     }
 
     companion object {
         @JvmStatic
         fun newInstance(
-            source: String
+            source: String,
+            fragmentManager: FragmentManager,
+            onAddTaskClick: ((NewTaskModel) -> Unit)?
         ) = AddTaskBottomsheet().apply {
             arguments = Bundle().apply {
                 putString(IntentKeyConstants.SOURCE, source)
+                onNewTaskClick = onAddTaskClick
             }
-        }
+        }.show(fragmentManager, TAG)
 
-        const val TAG = "AddTaskBottomsheet"
+        private const val TAG = "AddTaskBottomsheet"
     }
 }

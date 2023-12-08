@@ -18,12 +18,8 @@ class HomeActivity : BaseActivity() {
         setContentView(R.layout.activity_home)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.ivPlusBtn.setOnClickListener {
-            AddTaskBottomsheet.newInstance(pageType(), supportFragmentManager) {
-                // todo new task data here
-            }
-        }
-        showFragment(IndexFragment.newInstance(), IndexFragment.INDEX)
+        showFragment(IndexFragment.newInstance(null), IndexFragment.INDEX)
+        showAddTaskBottomsheet()
         setBottomNavigationListener()
     }
 
@@ -31,7 +27,7 @@ class HomeActivity : BaseActivity() {
         binding.bottomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.navigation_home -> {
-                    showFragment(IndexFragment.newInstance(), IndexFragment.INDEX)
+                    showFragment(IndexFragment.newInstance(null), IndexFragment.INDEX)
                     true
                 }
 
@@ -60,6 +56,14 @@ class HomeActivity : BaseActivity() {
             .replace(R.id.rootView, fragment)
             .commit()
         binding.tvFragmentName.text = screenName
+    }
+
+    private fun showAddTaskBottomsheet(){
+        binding.ivPlusBtn.setOnClickListener {
+            AddTaskBottomsheet.newInstance(pageType(), supportFragmentManager) {
+                showFragment(IndexFragment.newInstance(it), IndexFragment.INDEX)
+            }
+        }
     }
 
     override fun handleBack() {

@@ -52,17 +52,7 @@ class OnboardingFragment : BaseFragment() {
             }
         }
         tvSkip.setOnClickListener {
-            //showWelcomeLoginFragment()
-            showChooseCategoryPopUp()
-        }
-    }
-
-    private fun showChooseCategoryPopUp(){
-        ChooseCategoryDialog.showChooseCategoryDialog(
-            PageName.AddTaskBottomsheet,
-            childFragmentManager
-        ){
-            //todo
+            showWelcomeLoginFragment()
         }
     }
 
@@ -106,7 +96,6 @@ class OnboardingFragment : BaseFragment() {
             .replace(R.id.container, WelcomeLoginFragment.getInstance())
             .addToBackStack(null)
             .commit()
-
 
     companion object {
         @JvmStatic
