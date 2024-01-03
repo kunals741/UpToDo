@@ -1,6 +1,7 @@
 package com.kunal.uptodo.views
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -58,7 +59,7 @@ class HomeActivity : BaseActivity() {
         binding.tvFragmentName.text = screenName
     }
 
-    private fun showAddTaskBottomsheet(){
+    private fun showAddTaskBottomsheet() {
         binding.ivPlusBtn.setOnClickListener {
             AddTaskBottomsheet.newInstance(pageType(), supportFragmentManager) {
                 showFragment(IndexFragment.newInstance(it), IndexFragment.INDEX)
@@ -67,7 +68,7 @@ class HomeActivity : BaseActivity() {
     }
 
     override fun handleBack() {
-        //todo handle later
+
     }
 
     override fun pageType(): String = PageName.HomeActivity
@@ -77,13 +78,14 @@ class HomeActivity : BaseActivity() {
         @JvmStatic
         fun startHomeActivity(
             source: String,
-            activity: Activity
+            context: Context
         ) {
-            val intent = Intent(activity, HomeActivity::class.java)
+            val intent = Intent(context, HomeActivity::class.java)
             intent.apply {
+                flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                 putExtra(IntentKeyConstants.SOURCE, source)
             }
-            activity.startActivity(intent)
+            context.startActivity(intent)
         }
     }
 }

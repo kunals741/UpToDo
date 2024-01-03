@@ -11,6 +11,7 @@ import com.kunal.uptodo.adapters.OnboardingViewPagerAdapter
 import com.kunal.uptodo.constants.PageName
 import com.kunal.uptodo.databinding.FragmentOnboardingBinding
 import com.kunal.uptodo.models.OnboardingItem
+import com.kunal.uptodo.shared_pref.UserSession
 
 class OnboardingFragment : BaseFragment() {
 
@@ -28,6 +29,8 @@ class OnboardingFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView()
+        val userSession = UserSession(requireContext())
+        userSession.setIsOnBoardingScreenShown(true)
     }
 
     private fun initView() = binding.run {

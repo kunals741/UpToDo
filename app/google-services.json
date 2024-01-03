@@ -12,7 +12,20 @@
           "package_name": "com.kunal.uptodo"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "506079378598-e273qc8hrqvivcb8l09s03ijelnd3ndp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kunal.uptodo",
+            "certificate_hash": "bb011897a00ec46b32f613da2e4b7d1e58a1607a"
+          }
+        },
+        {
+          "client_id": "506079378598-q9mm1f7sc8a1s18k5c2k34fo2f8v5mqf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAuUy5QETDzIRxu1pCtktjf6oqtdQE0hDM"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "506079378598-q9mm1f7sc8a1s18k5c2k34fo2f8v5mqf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

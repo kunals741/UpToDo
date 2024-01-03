@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Notify"
+rootProject.name = "UpToDo"
 include(":app")
  

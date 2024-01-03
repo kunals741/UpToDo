@@ -1,6 +1,7 @@
 package com.kunal.uptodo.constants
 
 object PageName {
+    const val MainApplication = "MainApplication"
     const val WelcomeLoginFragment = "WelcomeLoginFragment"
     const val OnboardingFragment = "OnboardingFragment"
     const val LoginRegisterActivity = "LoginRegisterActivity"

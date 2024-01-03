@@ -15,8 +15,8 @@
     <string name="please_login_to_your_account_or_create_new_account_to_continue">Please login to your account or create new account to continue</string>
     <string name="create_account">Create account</string>
     <string name="login">Login</string>
-    <string name="username">Username</string>
-    <string name="enter_your_username">Enter your Username</string>
+    <string name="email_id">Email Id</string>
+    <string name="enter_your_email_id">Enter your Email Id</string>
     <string name="password">Password</string>
     <string name="enter_your_password">Enter your Password</string>\
     <string name="confirm_password">Confirm Password</string>
@@ -52,4 +52,5 @@
     <string name="category_color">Category color :</string>
     <string name="create_category">Create Category</string>
     <string name="search_for_your_task">Search for your task...</string>
+    <string name="default_web_client_id">506079378598-e273qc8hrqvivcb8l09s03ijelnd3ndp.apps.googleusercontent.com</string>
 </resources>
