@@ -18,9 +18,7 @@ import com.kunal.uptodo.viewModels.TaskViewModel
 class IndexFragment : BaseFragment() {
 
     private lateinit var binding: FragmentIndexBinding
-    private var newTask: NewTaskModel? = null
     private val taskViewModel: TaskViewModel by activityViewModels()
-    private var taskList = mutableListOf<NewTaskModel>() //todo later change to save the data ( firestore maybe)
     private lateinit var adapter: IndexTaskListAdapter
     private val db by lazy { FirebaseFirestore.getInstance() }
     private val userSession: UserSession by lazy { UserSession(requireContext()) }
@@ -42,7 +40,6 @@ class IndexFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView()
-        initListeners()
         initObservers()
     }
 
@@ -57,12 +54,11 @@ class IndexFragment : BaseFragment() {
         taskViewModel.apply {
             taskListLiveData.observe(viewLifecycleOwner) {
                 adapter.setTaskList(it)
-                updateUI(true)
+                updateUI(it.isNotEmpty())
             }
         }
     }
 
-    //todo change when remove task is ready:
     private fun updateUI(isTaskAvailable: Boolean) = binding.apply {
         if (!isTaskAvailable) {
             binding.ivChecklist.isVisible = true
@@ -75,10 +71,6 @@ class IndexFragment : BaseFragment() {
             binding.tvTapIcon.isVisible = false
             binding.rvTasks.isVisible = true
         }
-    }
-
-    private fun initListeners() = binding.run {
-        //todo
     }
 
     private fun deleteTaskFromFirestore(timeId: Long) {
