@@ -7,17 +7,20 @@ import com.kunal.uptodo.databinding.ItemIndexTaskBinding
 import com.kunal.uptodo.models.NewTaskModel
 
 
-class IndexTaskListAdapter() :
-    RecyclerView.Adapter<IndexTaskListAdapter.IndexTaskListViewHolder>() {
+class IndexTaskListAdapter(private val onTaskDeleteClick : ((Long) -> Unit)?) : RecyclerView.Adapter<IndexTaskListAdapter.IndexTaskListViewHolder>() {
 
     private lateinit var binding: ItemIndexTaskBinding
-    private var taskList : List<NewTaskModel> = emptyList()
+    private var taskList: List<NewTaskModel> = emptyList()
 
     inner class IndexTaskListViewHolder(val binding: ItemIndexTaskBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(newTask : NewTaskModel) = binding.run {
+        fun bind(newTask: NewTaskModel) = binding.run {
             tvTaskName.text = newTask.title
             tvDeadline.text = newTask.deadlineDate.toString()
+            radioButton.isChecked = false
+            radioButton.setOnClickListener{
+                onTaskDeleteClick?.invoke(newTask.timeCreated)
+            }
         }
     }
 

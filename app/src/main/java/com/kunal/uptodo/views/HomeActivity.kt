@@ -41,7 +41,6 @@ class HomeActivity : BaseActivity() {
         setTaskChangeListener()
     }
 
-    //tddomethod to change positon of navigiation manually:
 
     private fun setBottomNavigationListener() {
         binding.bottomNavigation.setOnItemSelectedListener { item ->
