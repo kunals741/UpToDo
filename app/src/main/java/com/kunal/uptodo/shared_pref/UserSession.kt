@@ -4,6 +4,7 @@ import android.content.Context
 import com.kunal.uptodo.constants.AppConstants.IS_LOGGED_IN
 import com.kunal.uptodo.constants.AppConstants.IS_ONBOARDING_SCREEN_SHOWN
 import com.kunal.uptodo.constants.AppConstants.USER_PREFS
+import com.kunal.uptodo.constants.AppConstants.USER_UID
 
 class UserSession(context: Context) {
 
@@ -23,5 +24,17 @@ class UserSession(context: Context) {
 
     fun isOnBoardingScreenShown(): Boolean {
         return sharedPreferences.getBoolean(IS_ONBOARDING_SCREEN_SHOWN, false)
+    }
+
+    fun setUserId(uid: String) {
+        sharedPreferences.edit().putString(USER_UID, uid).apply()
+    }
+
+    fun getUserId(): String {
+        return sharedPreferences.getString(USER_UID, "no_uid") ?: "no_uid"
+    }
+
+    fun clearPref() {
+        sharedPreferences.edit().clear().apply()
     }
 }

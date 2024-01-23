@@ -56,6 +56,7 @@ class ProfileFragment : BaseFragment() {
                 if (task.isSuccessful) {
                     auth.signOut()
                     userSession.setLoggedIn(false)
+                    userSession.clearPref()
                     Toast.makeText(requireContext(), "Logout successful", Toast.LENGTH_SHORT).show()
                     MainActivity.startMainActivity(getPageName(), requireContext())
                     requireActivity().finish()

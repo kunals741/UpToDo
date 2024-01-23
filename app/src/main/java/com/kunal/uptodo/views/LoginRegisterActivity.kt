@@ -32,6 +32,7 @@ class LoginRegisterActivity : BaseActivity() {
     private lateinit var googleSignInClient: GoogleSignInClient
     private val userSession by lazy { UserSession(this) }
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginRegisterBinding.inflate(layoutInflater)
@@ -49,7 +50,13 @@ class LoginRegisterActivity : BaseActivity() {
 
     override fun onStart() {
         super.onStart()
-        val currentUser = auth.currentUser
+        val user = auth.currentUser
+        user?.uid?.let { userSession.setUserId(it) } ?: run {
+            showToast(
+                this,
+                "UID is null"
+            )
+        }
     }
 
     private fun initView() = binding.run {
@@ -128,7 +135,12 @@ class LoginRegisterActivity : BaseActivity() {
             .addOnCompleteListener(this@LoginRegisterActivity) { task ->
                 if (task.isSuccessful) {
                     val user = auth.currentUser
-                    //todo use this user to fetch data:
+                    user?.uid?.let { userSession.setUserId(it) } ?: run {
+                        showToast(
+                            this,
+                            "UID is null"
+                        )
+                    }
                     startHomeActivity()
                 } else {
                     Log.d(pageType(), task.exception.toString())
@@ -142,7 +154,12 @@ class LoginRegisterActivity : BaseActivity() {
             .addOnCompleteListener(this@LoginRegisterActivity) { task ->
                 if (task.isSuccessful) {
                     val user = auth.currentUser
-                    //todo use user
+                    user?.uid?.let { userSession.setUserId(it) } ?: run {
+                        showToast(
+                            this,
+                            "UID is null"
+                        )
+                    }
                     startHomeActivity()
                 } else {
                     showToast(this@LoginRegisterActivity, "Authentication failed.")
@@ -172,6 +189,12 @@ class LoginRegisterActivity : BaseActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     val user = auth.currentUser
+                    user?.uid?.let { userSession.setUserId(it) } ?: run {
+                        showToast(
+                            this,
+                            "UID is null"
+                        )
+                    }
                     startHomeActivity()
                 } else {
                     showToast(this, "Authentication failed.")

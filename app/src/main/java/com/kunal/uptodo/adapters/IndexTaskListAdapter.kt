@@ -6,10 +6,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.kunal.uptodo.databinding.ItemIndexTaskBinding
 import com.kunal.uptodo.models.NewTaskModel
 
-class IndexTaskListAdapter(private val taskList: List<NewTaskModel>) :
+
+class IndexTaskListAdapter() :
     RecyclerView.Adapter<IndexTaskListAdapter.IndexTaskListViewHolder>() {
 
     private lateinit var binding: ItemIndexTaskBinding
+    private var taskList : List<NewTaskModel> = emptyList()
 
     inner class IndexTaskListViewHolder(val binding: ItemIndexTaskBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -33,5 +35,8 @@ class IndexTaskListAdapter(private val taskList: List<NewTaskModel>) :
 
     override fun getItemCount() = taskList.size
 
-
+    fun setTaskList(taskList: List<NewTaskModel>) {
+        this.taskList = taskList
+        notifyDataSetChanged() //todo optimized this later
+    }
 }

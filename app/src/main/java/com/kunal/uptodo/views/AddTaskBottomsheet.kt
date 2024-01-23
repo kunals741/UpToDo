@@ -57,6 +57,7 @@ class AddTaskBottomsheet : BaseBottomsheet() {
             showChooseCategoryPopUp()
         }
         ivAddTask.setOnClickListener {
+            dismiss()
             onNewTaskClick?.invoke(
                 NewTaskModel(
                     etTask.text?.toString(),
@@ -64,10 +65,10 @@ class AddTaskBottomsheet : BaseBottomsheet() {
                     deadline,
                     selectedTime,
                     category,
-                    priorityNumber
+                    priorityNumber,
+                    System.currentTimeMillis()
                 )
             )
-            dismiss()
         }
     }
 
