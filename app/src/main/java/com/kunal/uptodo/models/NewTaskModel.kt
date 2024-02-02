@@ -13,10 +13,10 @@ data class NewTaskModel(
     val selectedTime: SelectedTime?,
     val category: @RawValue CategoryType?,
     val priorityNumber: Int?,
-    val timeCreated : Long
+    val timeCreated: Long
 ) : Parcelable {
 
-    // No-argument constructor: ( neeeded for deseriazling data from firestore)
+    // No-argument constructor: ( needed for deserialize data from firestore)
     constructor() : this(null, null, null, null, null, null, -1L)
 
     @Parcelize
@@ -24,5 +24,7 @@ data class NewTaskModel(
         val hour: String,
         val minute: String,
         val timeText: String
-    ) : Parcelable
+    ) : Parcelable {
+        constructor() : this("", "", "")
+    }
 }

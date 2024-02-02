@@ -7,7 +7,7 @@
     android:background="@drawable/bg_4dp_corner_no_stroke"
     android:backgroundTint="@color/grey_navigation"
     android:paddingHorizontal="@dimen/dim_10dp"
-    android:layout_marginVertical="@dimen/dim_16dp"
+    android:layout_marginBottom="@dimen/dim_16dp"
     android:paddingVertical="@dimen/dim_12dp">
 
     <androidx.appcompat.widget.AppCompatRadioButton
