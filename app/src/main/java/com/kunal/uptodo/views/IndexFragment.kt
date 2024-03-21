@@ -11,7 +11,6 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.kunal.uptodo.adapters.IndexTaskListAdapter
 import com.kunal.uptodo.constants.PageName
 import com.kunal.uptodo.databinding.FragmentIndexBinding
-import com.kunal.uptodo.models.NewTaskModel
 import com.kunal.uptodo.shared_pref.UserSession
 import com.kunal.uptodo.viewModels.TaskViewModel
 
@@ -81,7 +80,6 @@ class IndexFragment : BaseFragment() {
                 documentToDelete.reference.delete()
                     .addOnSuccessListener {
                         Log.d(HomeActivity.TAG, "Task deleted with timeCreated: $timeId")
-                        // Update your UI to reflect the deletion
                     }
                     .addOnFailureListener { exception ->
                         Log.w(HomeActivity.TAG, "Error deleting task", exception)

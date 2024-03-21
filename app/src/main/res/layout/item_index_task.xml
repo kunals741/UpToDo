@@ -48,4 +48,18 @@
 
 <!--    todo priority and catergory view-->
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clPriority"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+        
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/dim_14dp"
+            android:layout_height="@dimen/dim_14dp"
+            android:src="@drawable/ic_priority" />
+        
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

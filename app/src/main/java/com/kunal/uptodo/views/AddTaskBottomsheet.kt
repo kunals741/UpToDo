@@ -1,7 +1,6 @@
 package com.kunal.uptodo.views
 
 import android.os.Bundle
-import android.text.format.DateFormat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +12,7 @@ import com.kunal.uptodo.constants.IntentKeyConstants
 import com.kunal.uptodo.constants.PageName
 import com.kunal.uptodo.databinding.BottomsheetAddTaskBinding
 import com.kunal.uptodo.models.NewTaskModel
+import com.kunal.uptodo.utils.showToast
 import java.util.Date
 
 class AddTaskBottomsheet : BaseBottomsheet() {
@@ -57,18 +57,27 @@ class AddTaskBottomsheet : BaseBottomsheet() {
             showChooseCategoryPopUp()
         }
         ivAddTask.setOnClickListener {
-            dismiss()
-            onNewTaskClick?.invoke(
-                NewTaskModel(
-                    etTask.text?.toString(),
-                    etDescription.text?.toString(),
-                    deadline,
-                    selectedTime,
-                    category,
-                    priorityNumber,
-                    System.currentTimeMillis()
+            if (etTask.text.isNullOrEmpty()) {
+                showToast(requireContext(), "Please enter task name")
+            }
+            else if (deadline == null) {
+                showToast(requireContext(), "Please select task deadline")
+            } else if (selectedTime == null) {
+                showToast(requireContext(), "Please select task deadline")
+            } else {
+                dismiss()
+                onNewTaskClick?.invoke(
+                    NewTaskModel(
+                        etTask.text?.toString(),
+                        etDescription.text?.toString(),
+                        deadline,
+                        selectedTime,
+                        category,
+                        priorityNumber,
+                        System.currentTimeMillis()
+                    )
                 )
-            )
+            }
         }
     }
 
@@ -79,13 +88,6 @@ class AddTaskBottomsheet : BaseBottomsheet() {
         ) { dateMillis ->
             // Create Date object from milliseconds.
             val date = Date(dateMillis)
-
-            // Get Date values and created formatted string date to show in Toast.
-            val selectedDayOfWeek = DateFormat.format("EEEE", date) as String // Monday
-            val selectedDay = DateFormat.format("dd", date) as String // 05
-            val selectedMonthString = DateFormat.format("MMM", date) as String // Jul
-            val selectedMonthNumber = DateFormat.format("MM", date) as String // 07
-            val selectedYear = DateFormat.format("yyyy", date) as String // 2021
 
             deadline = dateMillis
 

@@ -30,7 +30,6 @@ class HomeActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         FirebaseAuth.getInstance().currentUser?.uid?.let { userSession.setUserId(it) }
@@ -40,7 +39,6 @@ class HomeActivity : BaseActivity() {
         getUserTasksFromFirestore()
         setTaskChangeListener()
     }
-
 
     private fun setBottomNavigationListener() {
         binding.bottomNavigation.setOnItemSelectedListener { item ->
@@ -124,7 +122,6 @@ class HomeActivity : BaseActivity() {
     }
 
     override fun pageType(): String = PageName.HomeActivity
-
 
     companion object {
         const val TAG = "HomeActivity"

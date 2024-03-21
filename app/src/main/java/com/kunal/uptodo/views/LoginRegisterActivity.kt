@@ -4,7 +4,6 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.core.view.isVisible
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -144,7 +143,7 @@ class LoginRegisterActivity : BaseActivity() {
                     startHomeActivity()
                 } else {
                     Log.d(pageType(), task.exception.toString())
-                    showToast(this@LoginRegisterActivity, "Authentication failed.")
+                    showToast(this@LoginRegisterActivity, "Authentication failed. Try again later.")
                 }
             }
     }
