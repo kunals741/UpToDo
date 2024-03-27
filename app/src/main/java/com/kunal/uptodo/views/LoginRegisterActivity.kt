@@ -51,6 +51,7 @@ class LoginRegisterActivity : BaseActivity() {
         super.onStart()
         val user = auth.currentUser
         user?.uid?.let { userSession.setUserId(it) } ?: run {
+            //todo fix, when user is not logged in, this is temporory
             showToast(
                 this,
                 "UID is null"

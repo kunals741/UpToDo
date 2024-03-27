@@ -95,7 +95,7 @@ class OnboardingFragment : BaseFragment() {
     }
 
     private fun showWelcomeLoginFragment() =
-        requireActivity().supportFragmentManager.beginTransaction()
+        parentFragmentManager.beginTransaction()
             .replace(R.id.container, WelcomeLoginFragment.getInstance())
             .addToBackStack(null)
             .commit()
